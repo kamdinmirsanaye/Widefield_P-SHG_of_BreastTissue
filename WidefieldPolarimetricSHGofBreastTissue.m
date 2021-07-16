@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%% Widefield Polarimetry Analysis Program %%%%%%%%%%%%%%%%%%%
 
-% Name:     WidefieldSubmittedCodeUnified.m
+% Name:     WidefieldPolarimetricSHGofBreastTissue.m
 % Authors:  Kamdin Mirsanaye & Yasmeen Kamaliddin
 % Date:     July, 2021
 
@@ -10,11 +10,11 @@
 %   (contrast, correlation, entropy, ASM, and IDM) of an entire data set of
 %   P-SHG images.
 
-% NECESSARY FUNCTIONS: HeatmapMaker.m, DivideImage.m, GLCMFeat.m
+% NECESSARY FUNCTIONS: HeatmapMaker.m, DivideImage.m, GLCMFeat.m, LogisticRegCode.m
 
 % Copyright (C) Kamdin Mirsanaye & Yasmeen Kamaliddin 2021-
 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%% Tunable Parameters %%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%% Tunable Options %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Signal to Noise Ratio Cutoff
 SNRcutoff = 3;
@@ -28,29 +28,31 @@ MinSHGInt=20; MaxSHGInt=400;
 
 % Texture Analysis parameters
 d = 1;
-numOfSubImagesVec  = [4,64];
-
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+numOfSubImagesVec  = [64]; % Include any of the following subdivision levels in the array: 
+                           % 1,4,16,64,256,1024,4096,16384,65536,262144,104856
+                           % Please note that subdivision above 256 are unnecessary and result in
+                           % significantly longer computation times
 
 % Display Polarimetric Parameter Images
-DisplayImages = 0;
+DisplayImages = 0; % set to 1 to enable
 
 % Display Polarimetric Parameter Histograms
-DisplayHistograms = 0;
+DisplayHistograms = 0; % set to 1 to enable
 
 % Perform Multiple Comparisons
-MultipleComparisons=1;
+MultipleComparisons=1; % set to 1 to enable
 
 % Perform Texture Analysis
-TextureAnalysis=1;
+TextureAnalysis=1; % set to 1 to enable
 
 % Perform Classification
-Classification=1;
+Classification=1; % set to 1 to enable
 
 % Display Parameter Boxplots
-Boxplots=1;
+Boxplots=1; % set to 1 to enable
 
-% Turn off unnecessary warnings
+%% %%%%%%%%%%%%%%%%% Turn off unnecessary warnings %%%%%%%%%%%%%%%%%%%%%%%%
+
 warning('off','all')
 warning
 
