@@ -24,8 +24,8 @@ To successfully execute the program, download and unzip all files present in thi
 - If you wish to display polarimetric parameter images, set "DisplayImages" option to "1". If you wish to display the corresponding histograms, set "DisplayHistograms" option to "1".
 - If using a Mac computer, direction of the slashes will need to be reversed. To do so:
   - Press Command+F
-  - Type " '/' " for "Find what"
-  - Type " '\' " for "Replace with"
+  - Type " '\' " for "Find what"
+  - Type " '/' " for "Replace with"
   - Click on "Replace all"
 - Run the program
 - The first window prompt will ask you to select the background images. Please select the "Background" folder.
