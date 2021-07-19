@@ -53,6 +53,8 @@ Boxplots=1; % set to 1 to enable
 
 %% %%%%%%%%%%%%%%%%% Turn off unnecessary warnings %%%%%%%%%%%%%%%%%%%%%%%%
 
+addpath(fileparts(mfilename('fullpath')))
+cd(fileparts(mfilename('fullpath')))
 warning('off','all')
 warning
 
